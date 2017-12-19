@@ -1,14 +1,13 @@
 window.onload = function(){
-
+  var milkcocoa = new Milkcocoa({
+    appId: 'BJBop-Szz',
+    accessToken:  'sh/+h9jiB0zJBGp1aJzdDGgF6Tbg0AvO3JERBrRpTLs='
+  });
   var currentMode = 'portrait';
-  var output = document.getElementById('output');
-
-  // app_id, API_Key, API_Secretは自分のものに書き換えてください
-  var milkcocoa = new MilkCocoa('dogjb65ykxo.mlkcca.com'); 
   var ds = milkcocoa.dataStore('AccData');
   ds.on('send', function (mes) { console.log(mes) })
   window.addEventListener('devicemotion', function(e){
-    g = e.accelerationIncludingGravity;
+    g = e.acceleration;
     ds.send({x: g.x, y: g.y, z: g.z});
   },true);
 };

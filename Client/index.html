@@ -11,15 +11,20 @@
 
 
 <body>
-	<script src='https://cdn.mlkcca.com/v0.6.0/milkcocoa.js'></script>
+	<script src='https://cdn.mlkcca.com/v3/milkcocoa.1.0.0.min.js'></script>
 	<script>
-		var milkcocoa = new MilkCocoa('dogjb65ykxo.mlkcca.com'); 
+		var milkcocoa = new Milkcocoa({
+		  appId: 'BJBop-Szz',
+		  accessToken:  'scofHXNjjiDHiDjTkqxjq56RVeeWWEAvAGJCLOkeDe8='
+		});
+		console.log(milkcocoa);
 		var clickData = milkcocoa.dataStore('ClickData');		
 		function reply_click(clicked_id) {
 			console.log(clicked_id);
 			clickData.push({clickedId: clicked_id});
 			console.log('done');
-		}
+		}; 
+
 	</script>
 	<script src="main-sp.js"></script>
 	<div  id = "output" > </ div> 
