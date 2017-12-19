@@ -14,199 +14,204 @@
 	<br>
 	<H1 align="center">Prediction</H1> 
 	<br><br>
-	<script src='https://cdn.mlkcca.com/v0.6.0/milkcocoa.js'></script>
+	<script src='https://cdn.mlkcca.com/v3/milkcocoa.1.0.0.min.js'></script>
 	<script>
-		var milkcocoa = new MilkCocoa('dogjb65ykxo.mlkcca.com'); 
-		var clickData = milkcocoa.dataStore('ClickData');		
-		function reply_click(clicked_id) {
-			alert(clicked_id);
-			clickData.push({clickedId: clicked_id});
+		var obj = document.getElementById("0_0");
+		var milkcocoa = new Milkcocoa({
+		    appId: 'BJBop-Szz',
+		    apiKey: 'QvXkGBVhDx8Mzj7G-BTH5Sv9Lo0iPv6ED1zYzKHU' //accessToken:  'sh/+h9jiB0zJBGp1aJzdDGgF6Tbg0AvO3JERBrRpTLs='
+		}); 
+		var clickData = milkcocoa.dataStore('ClickDataPrediction');
+		clickData.on('push', click_message)	;	
+		function click_message(clicked_id) {
+			//console.log(clicked_id.value);
+			$(obj).toggleClass("active");
+			obj = document.getElementById(clicked_id.value);
+			$(obj).toggleClass("active");
 		}
-	</script>
-	<script src="main-sp.js"></script>
-	<div  id = "output" > </ div> 
+	</script> 
 
 
 <div class="container">
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "0_0" onClick="reply_click(this.id)">00</a>
-		<a href="#" class="btn btn-primary" id= "0_1" onClick="reply_click(this.id)">01</a>
-		<a href="#" class="btn btn-primary" id= "0_2" onClick="reply_click(this.id)">02</a>
-		<a href="#" class="btn btn-primary" id= "0_3" onClick="reply_click(this.id)">03</a>
-		<a href="#" class="btn btn-primary" id= "0_4" onClick="reply_click(this.id)">04</a>
-		<a href="#" class="btn btn-primary" id= "0_5" onClick="reply_click(this.id)">05</a>
-		<a href="#" class="btn btn-primary" id= "0_6" onClick="reply_click(this.id)">06</a>
+		<a href="#" class="btn btn-primary" id= "0_0" disabled=True>00</a>
+		<a href="#" class="btn btn-primary" id= "0_1" disabled=True>01</a>
+		<a href="#" class="btn btn-primary" id= "0_2" disabled=True>02</a>
+		<a href="#" class="btn btn-primary" id= "0_3" disabled=True>03</a>
+		<a href="#" class="btn btn-primary" id= "0_4" disabled=True>04</a>
+		<a href="#" class="btn btn-primary" id= "0_5" disabled=True>05</a>
+		<a href="#" class="btn btn-primary" id= "0_6" disabled=True>06</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "1_0" onClick="reply_click(this.id)">10</a>
-		<a href="#" class="btn btn-primary" id= "1_1" onClick="reply_click(this.id)">11</a>
-		<a href="#" class="btn btn-primary" id= "1_2" onClick="reply_click(this.id)">12</a>
-		<a href="#" class="btn btn-primary" id= "1_3" onClick="reply_click(this.id)">13</a>
-		<a href="#" class="btn btn-primary" id= "1_4" onClick="reply_click(this.id)">14</a>
-		<a href="#" class="btn btn-primary" id= "1_5" onClick="reply_click(this.id)">15</a>
-		<a href="#" class="btn btn-primary" id= "1_6" onClick="reply_click(this.id)">16</a>
+		<a href="#" class="btn btn-primary" id= "1_0" disabled=True>10</a>
+		<a href="#" class="btn btn-primary" id= "1_1" disabled=True>11</a>
+		<a href="#" class="btn btn-primary" id= "1_2" disabled=True>12</a>
+		<a href="#" class="btn btn-primary" id= "1_3" disabled=True>13</a>
+		<a href="#" class="btn btn-primary" id= "1_4" disabled=True>14</a>
+		<a href="#" class="btn btn-primary" id= "1_5" disabled=True>15</a>
+		<a href="#" class="btn btn-primary" id= "1_6" disabled=True>16</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "2_0" onClick="reply_click(this.id)">20</a>
-		<a href="#" class="btn btn-primary" id= "2_1" onClick="reply_click(this.id)">21</a>
-		<a href="#" class="btn btn-primary" id= "2_2" onClick="reply_click(this.id)">22</a>
-		<a href="#" class="btn btn-primary" id= "2_3" onClick="reply_click(this.id)">23</a>
-		<a href="#" class="btn btn-primary" id= "2_4" onClick="reply_click(this.id)">24</a>
-		<a href="#" class="btn btn-primary" id= "2_5" onClick="reply_click(this.id)">25</a>
-		<a href="#" class="btn btn-primary" id= "2_6" onClick="reply_click(this.id)">26</a>
+		<a href="#" class="btn btn-primary" id= "2_0" disabled=True>20</a>
+		<a href="#" class="btn btn-primary" id= "2_1" disabled=True>21</a>
+		<a href="#" class="btn btn-primary" id= "2_2" disabled=True>22</a>
+		<a href="#" class="btn btn-primary" id= "2_3" disabled=True>23</a>
+		<a href="#" class="btn btn-primary" id= "2_4" disabled=True>24</a>
+		<a href="#" class="btn btn-primary" id= "2_5" disabled=True>25</a>
+		<a href="#" class="btn btn-primary" id= "2_6" disabled=True>26</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "3_0" onClick="reply_click(this.id)">30</a>
-		<a href="#" class="btn btn-primary" id= "3_1" onClick="reply_click(this.id)">31</a>
-		<a href="#" class="btn btn-primary" id= "3_2" onClick="reply_click(this.id)">32</a>
-		<a href="#" class="btn btn-primary" id= "3_3" onClick="reply_click(this.id)">33</a>
-		<a href="#" class="btn btn-primary" id= "3_4" onClick="reply_click(this.id)">34</a>
-		<a href="#" class="btn btn-primary" id= "3_5" onClick="reply_click(this.id)">35</a>
-		<a href="#" class="btn btn-primary" id= "3_6" onClick="reply_click(this.id)">36</a>
+		<a href="#" class="btn btn-primary" id= "3_0" disabled=True>30</a>
+		<a href="#" class="btn btn-primary" id= "3_1" disabled=True>31</a>
+		<a href="#" class="btn btn-primary" id= "3_2" disabled=True>32</a>
+		<a href="#" class="btn btn-primary" id= "3_3" disabled=True>33</a>
+		<a href="#" class="btn btn-primary" id= "3_4" disabled=True>34</a>
+		<a href="#" class="btn btn-primary" id= "3_5" disabled=True>35</a>
+		<a href="#" class="btn btn-primary" id= "3_6" disabled=True>36</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "4_0" onClick="reply_click(this.id)">40</a>
-		<a href="#" class="btn btn-primary" id= "4_1" onClick="reply_click(this.id)">41</a>
-		<a href="#" class="btn btn-primary" id= "4_2" onClick="reply_click(this.id)">42</a>
-		<a href="#" class="btn btn-primary" id= "4_3" onClick="reply_click(this.id)">43</a>
-		<a href="#" class="btn btn-primary" id= "4_4" onClick="reply_click(this.id)">44</a>
-		<a href="#" class="btn btn-primary" id= "4_5" onClick="reply_click(this.id)">45</a>
-		<a href="#" class="btn btn-primary" id= "4_6" onClick="reply_click(this.id)">46</a>
+		<a href="#" class="btn btn-primary" id= "4_0" disabled=True>40</a>
+		<a href="#" class="btn btn-primary" id= "4_1" disabled=True>41</a>
+		<a href="#" class="btn btn-primary" id= "4_2" disabled=True>42</a>
+		<a href="#" class="btn btn-primary" id= "4_3" disabled=True>43</a>
+		<a href="#" class="btn btn-primary" id= "4_4" disabled=True>44</a>
+		<a href="#" class="btn btn-primary" id= "4_5" disabled=True>45</a>
+		<a href="#" class="btn btn-primary" id= "4_6" disabled=True>46</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "5_0" onClick="reply_click(this.id)">50</a>
-		<a href="#" class="btn btn-primary" id= "5_1" onClick="reply_click(this.id)">51</a>
-		<a href="#" class="btn btn-primary" id= "5_2" onClick="reply_click(this.id)">52</a>
-		<a href="#" class="btn btn-primary" id= "5_3" onClick="reply_click(this.id)">53</a>
-		<a href="#" class="btn btn-primary" id= "5_4" onClick="reply_click(this.id)">54</a>
-		<a href="#" class="btn btn-primary" id= "5_5" onClick="reply_click(this.id)">55</a>
-		<a href="#" class="btn btn-primary" id= "5_6" onClick="reply_click(this.id)">56</a>
+		<a href="#" class="btn btn-primary" id= "5_0" disabled=True>50</a>
+		<a href="#" class="btn btn-primary" id= "5_1" disabled=True>51</a>
+		<a href="#" class="btn btn-primary" id= "5_2" disabled=True>52</a>
+		<a href="#" class="btn btn-primary" id= "5_3" disabled=True>53</a>
+		<a href="#" class="btn btn-primary" id= "5_4" disabled=True>54</a>
+		<a href="#" class="btn btn-primary" id= "5_5" disabled=True>55</a>
+		<a href="#" class="btn btn-primary" id= "5_6" disabled=True>56</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "6_0" onClick="reply_click(this.id)">60</a>
-		<a href="#" class="btn btn-primary" id= "6_1" onClick="reply_click(this.id)">61</a>
-		<a href="#" class="btn btn-primary" id= "6_2" onClick="reply_click(this.id)">62</a>
-		<a href="#" class="btn btn-primary" id= "6_3" onClick="reply_click(this.id)">63</a>
-		<a href="#" class="btn btn-primary" id= "6_4" onClick="reply_click(this.id)">64</a>
-		<a href="#" class="btn btn-primary" id= "6_5" onClick="reply_click(this.id)">65</a>
-		<a href="#" class="btn btn-primary" id= "6_6" onClick="reply_click(this.id)">66</a>
+		<a href="#" class="btn btn-primary" id= "6_0" disabled=True>60</a>
+		<a href="#" class="btn btn-primary" id= "6_1" disabled=True>61</a>
+		<a href="#" class="btn btn-primary" id= "6_2" disabled=True>62</a>
+		<a href="#" class="btn btn-primary" id= "6_3" disabled=True>63</a>
+		<a href="#" class="btn btn-primary" id= "6_4" disabled=True>64</a>
+		<a href="#" class="btn btn-primary" id= "6_5" disabled=True>65</a>
+		<a href="#" class="btn btn-primary" id= "6_6" disabled=True>66</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "7_0" onClick="reply_click(this.id)">70</a>
-		<a href="#" class="btn btn-primary" id= "7_1" onClick="reply_click(this.id)">71</a>
-		<a href="#" class="btn btn-primary" id= "7_2" onClick="reply_click(this.id)">72</a>
-		<a href="#" class="btn btn-primary" id= "7_3" onClick="reply_click(this.id)">73</a>
-		<a href="#" class="btn btn-primary" id= "7_4" onClick="reply_click(this.id)">74</a>
-		<a href="#" class="btn btn-primary" id= "7_5" onClick="reply_click(this.id)">75</a>
-		<a href="#" class="btn btn-primary" id= "7_6" onClick="reply_click(this.id)">76</a>
+		<a href="#" class="btn btn-primary" id= "7_0" disabled=True>70</a>
+		<a href="#" class="btn btn-primary" id= "7_1" disabled=True>71</a>
+		<a href="#" class="btn btn-primary" id= "7_2" disabled=True>72</a>
+		<a href="#" class="btn btn-primary" id= "7_3" disabled=True>73</a>
+		<a href="#" class="btn btn-primary" id= "7_4" disabled=True>74</a>
+		<a href="#" class="btn btn-primary" id= "7_5" disabled=True>75</a>
+		<a href="#" class="btn btn-primary" id= "7_6" disabled=True>76</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "8_0" onClick="reply_click(this.id)">80</a>
-		<a href="#" class="btn btn-primary" id= "8_1" onClick="reply_click(this.id)">81</a>
-		<a href="#" class="btn btn-primary" id= "8_2" onClick="reply_click(this.id)">82</a>
-		<a href="#" class="btn btn-primary" id= "8_3" onClick="reply_click(this.id)">83</a>
-		<a href="#" class="btn btn-primary" id= "8_4" onClick="reply_click(this.id)">84</a>
-		<a href="#" class="btn btn-primary" id= "8_5" onClick="reply_click(this.id)">85</a>
-		<a href="#" class="btn btn-primary" id= "8_6" onClick="reply_click(this.id)">86</a>
+		<a href="#" class="btn btn-primary" id= "8_0" disabled=True>80</a>
+		<a href="#" class="btn btn-primary" id= "8_1" disabled=True>81</a>
+		<a href="#" class="btn btn-primary" id= "8_2" disabled=True>82</a>
+		<a href="#" class="btn btn-primary" id= "8_3" disabled=True>83</a>
+		<a href="#" class="btn btn-primary" id= "8_4" disabled=True>84</a>
+		<a href="#" class="btn btn-primary" id= "8_5" disabled=True>85</a>
+		<a href="#" class="btn btn-primary" id= "8_6" disabled=True>86</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "9_0" onClick="reply_click(this.id)">90</a>
-		<a href="#" class="btn btn-primary" id= "9_1" onClick="reply_click(this.id)">91</a>
-		<a href="#" class="btn btn-primary" id= "9_2" onClick="reply_click(this.id)">92</a>
-		<a href="#" class="btn btn-primary" id= "9_3" onClick="reply_click(this.id)">93</a>
-		<a href="#" class="btn btn-primary" id= "9_4" onClick="reply_click(this.id)">94</a>
-		<a href="#" class="btn btn-primary" id= "9_5" onClick="reply_click(this.id)">95</a>
-		<a href="#" class="btn btn-primary" id= "9_6" onClick="reply_click(this.id)">96</a>
+		<a href="#" class="btn btn-primary" id= "9_0" disabled=True>90</a>
+		<a href="#" class="btn btn-primary" id= "9_1" disabled=True>91</a>
+		<a href="#" class="btn btn-primary" id= "9_2" disabled=True>92</a>
+		<a href="#" class="btn btn-primary" id= "9_3" disabled=True>93</a>
+		<a href="#" class="btn btn-primary" id= "9_4" disabled=True>94</a>
+		<a href="#" class="btn btn-primary" id= "9_5" disabled=True>95</a>
+		<a href="#" class="btn btn-primary" id= "9_6" disabled=True>96</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "10_0" onClick="reply_click(this.id)">100</a>
-		<a href="#" class="btn btn-primary" id= "10_1" onClick="reply_click(this.id)">101</a>
-		<a href="#" class="btn btn-primary" id= "10_2" onClick="reply_click(this.id)">102</a>
-		<a href="#" class="btn btn-primary" id= "10_3" onClick="reply_click(this.id)">103</a>
-		<a href="#" class="btn btn-primary" id= "10_4" onClick="reply_click(this.id)">104</a>
-		<a href="#" class="btn btn-primary" id= "10_5" onClick="reply_click(this.id)">105</a>
-		<a href="#" class="btn btn-primary" id= "10_6" onClick="reply_click(this.id)">106</a>
+		<a href="#" class="btn btn-primary" id= "10_0" disabled=True>100</a>
+		<a href="#" class="btn btn-primary" id= "10_1" disabled=True>101</a>
+		<a href="#" class="btn btn-primary" id= "10_2" disabled=True>102</a>
+		<a href="#" class="btn btn-primary" id= "10_3" disabled=True>103</a>
+		<a href="#" class="btn btn-primary" id= "10_4" disabled=True>104</a>
+		<a href="#" class="btn btn-primary" id= "10_5" disabled=True>105</a>
+		<a href="#" class="btn btn-primary" id= "10_6" disabled=True>106</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "11_0" onClick="reply_click(this.id)">110</a>
-		<a href="#" class="btn btn-primary" id= "11_1" onClick="reply_click(this.id)">111</a>
-		<a href="#" class="btn btn-primary" id= "11_2" onClick="reply_click(this.id)">112</a>
-		<a href="#" class="btn btn-primary" id= "11_3" onClick="reply_click(this.id)">113</a>
-		<a href="#" class="btn btn-primary" id= "11_4" onClick="reply_click(this.id)">114</a>
-		<a href="#" class="btn btn-primary" id= "11_5" onClick="reply_click(this.id)">115</a>
-		<a href="#" class="btn btn-primary" id= "11_6" onClick="reply_click(this.id)">116</a>
+		<a href="#" class="btn btn-primary" id= "11_0" disabled=True>110</a>
+		<a href="#" class="btn btn-primary" id= "11_1" disabled=True>111</a>
+		<a href="#" class="btn btn-primary" id= "11_2" disabled=True>112</a>
+		<a href="#" class="btn btn-primary" id= "11_3" disabled=True>113</a>
+		<a href="#" class="btn btn-primary" id= "11_4" disabled=True>114</a>
+		<a href="#" class="btn btn-primary" id= "11_5" disabled=True>115</a>
+		<a href="#" class="btn btn-primary" id= "11_6" disabled=True>116</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "12_0" onClick="reply_click(this.id)">120</a>
-		<a href="#" class="btn btn-primary" id= "12_1" onClick="reply_click(this.id)">121</a>
-		<a href="#" class="btn btn-primary" id= "12_2" onClick="reply_click(this.id)">122</a>
-		<a href="#" class="btn btn-primary" id= "12_3" onClick="reply_click(this.id)">123</a>
-		<a href="#" class="btn btn-primary" id= "12_4" onClick="reply_click(this.id)">124</a>
-		<a href="#" class="btn btn-primary" id= "12_5" onClick="reply_click(this.id)">125</a>
-		<a href="#" class="btn btn-primary" id= "12_6" onClick="reply_click(this.id)">126</a>
+		<a href="#" class="btn btn-primary" id= "12_0" disabled=True>120</a>
+		<a href="#" class="btn btn-primary" id= "12_1" disabled=True>121</a>
+		<a href="#" class="btn btn-primary" id= "12_2" disabled=True>122</a>
+		<a href="#" class="btn btn-primary" id= "12_3" disabled=True>123</a>
+		<a href="#" class="btn btn-primary" id= "12_4" disabled=True>124</a>
+		<a href="#" class="btn btn-primary" id= "12_5" disabled=True>125</a>
+		<a href="#" class="btn btn-primary" id= "12_6" disabled=True>126</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "13_0" onClick="reply_click(this.id)">130</a>
-		<a href="#" class="btn btn-primary" id= "13_1" onClick="reply_click(this.id)">131</a>
-		<a href="#" class="btn btn-primary" id= "13_2" onClick="reply_click(this.id)">132</a>
-		<a href="#" class="btn btn-primary" id= "13_3" onClick="reply_click(this.id)">133</a>
-		<a href="#" class="btn btn-primary" id= "13_4" onClick="reply_click(this.id)">134</a>
-		<a href="#" class="btn btn-primary" id= "13_5" onClick="reply_click(this.id)">135</a>
-		<a href="#" class="btn btn-primary" id= "13_6" onClick="reply_click(this.id)">136</a>
+		<a href="#" class="btn btn-primary" id= "13_0" disabled=True>130</a>
+		<a href="#" class="btn btn-primary" id= "13_1" disabled=True>131</a>
+		<a href="#" class="btn btn-primary" id= "13_2" disabled=True>132</a>
+		<a href="#" class="btn btn-primary" id= "13_3" disabled=True>133</a>
+		<a href="#" class="btn btn-primary" id= "13_4" disabled=True>134</a>
+		<a href="#" class="btn btn-primary" id= "13_5" disabled=True>135</a>
+		<a href="#" class="btn btn-primary" id= "13_6" disabled=True>136</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "14_0" onClick="reply_click(this.id)">140</a>
-		<a href="#" class="btn btn-primary" id= "14_1" onClick="reply_click(this.id)">141</a>
-		<a href="#" class="btn btn-primary" id= "14_2" onClick="reply_click(this.id)">142</a>
-		<a href="#" class="btn btn-primary" id= "14_3" onClick="reply_click(this.id)">143</a>
-		<a href="#" class="btn btn-primary" id= "14_4" onClick="reply_click(this.id)">144</a>
-		<a href="#" class="btn btn-primary" id= "14_5" onClick="reply_click(this.id)">145</a>
-		<a href="#" class="btn btn-primary" id= "14_6" onClick="reply_click(this.id)">146</a>
+		<a href="#" class="btn btn-primary" id= "14_0" disabled=True>140</a>
+		<a href="#" class="btn btn-primary" id= "14_1" disabled=True>141</a>
+		<a href="#" class="btn btn-primary" id= "14_2" disabled=True>142</a>
+		<a href="#" class="btn btn-primary" id= "14_3" disabled=True>143</a>
+		<a href="#" class="btn btn-primary" id= "14_4" disabled=True>144</a>
+		<a href="#" class="btn btn-primary" id= "14_5" disabled=True>145</a>
+		<a href="#" class="btn btn-primary" id= "14_6" disabled=True>146</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "15_0" onClick="reply_click(this.id)">150</a>
-		<a href="#" class="btn btn-primary" id= "15_1" onClick="reply_click(this.id)">151</a>
-		<a href="#" class="btn btn-primary" id= "15_2" onClick="reply_click(this.id)">152</a>
-		<a href="#" class="btn btn-primary" id= "15_3" onClick="reply_click(this.id)">153</a>
-		<a href="#" class="btn btn-primary" id= "15_4" onClick="reply_click(this.id)">154</a>
-		<a href="#" class="btn btn-primary" id= "15_5" onClick="reply_click(this.id)">155</a>
-		<a href="#" class="btn btn-primary" id= "15_6" onClick="reply_click(this.id)">156</a>
+		<a href="#" class="btn btn-primary" id= "15_0" disabled=True>150</a>
+		<a href="#" class="btn btn-primary" id= "15_1" disabled=True>151</a>
+		<a href="#" class="btn btn-primary" id= "15_2" disabled=True>152</a>
+		<a href="#" class="btn btn-primary" id= "15_3" disabled=True>153</a>
+		<a href="#" class="btn btn-primary" id= "15_4" disabled=True>154</a>
+		<a href="#" class="btn btn-primary" id= "15_5" disabled=True>155</a>
+		<a href="#" class="btn btn-primary" id= "15_6" disabled=True>156</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "16_0" onClick="reply_click(this.id)">160</a>
-		<a href="#" class="btn btn-primary" id= "16_1" onClick="reply_click(this.id)">161</a>
-		<a href="#" class="btn btn-primary" id= "16_2" onClick="reply_click(this.id)">162</a>
-		<a href="#" class="btn btn-primary" id= "16_3" onClick="reply_click(this.id)">163</a>
-		<a href="#" class="btn btn-primary" id= "16_4" onClick="reply_click(this.id)">164</a>
-		<a href="#" class="btn btn-primary" id= "16_5" onClick="reply_click(this.id)">165</a>
-		<a href="#" class="btn btn-primary" id= "16_6" onClick="reply_click(this.id)">166</a>
+		<a href="#" class="btn btn-primary" id= "16_0" disabled=True>160</a>
+		<a href="#" class="btn btn-primary" id= "16_1" disabled=True>161</a>
+		<a href="#" class="btn btn-primary" id= "16_2" disabled=True>162</a>
+		<a href="#" class="btn btn-primary" id= "16_3" disabled=True>163</a>
+		<a href="#" class="btn btn-primary" id= "16_4" disabled=True>164</a>
+		<a href="#" class="btn btn-primary" id= "16_5" disabled=True>165</a>
+		<a href="#" class="btn btn-primary" id= "16_6" disabled=True>166</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "17_0" onClick="reply_click(this.id)">170</a>
-		<a href="#" class="btn btn-primary" id= "17_1" onClick="reply_click(this.id)">171</a>
-		<a href="#" class="btn btn-primary" id= "17_2" onClick="reply_click(this.id)">172</a>
-		<a href="#" class="btn btn-primary" id= "17_3" onClick="reply_click(this.id)">173</a>
-		<a href="#" class="btn btn-primary" id= "17_4" onClick="reply_click(this.id)">174</a>
-		<a href="#" class="btn btn-primary" id= "17_5" onClick="reply_click(this.id)">175</a>
-		<a href="#" class="btn btn-primary" id= "17_6" onClick="reply_click(this.id)">176</a>
+		<a href="#" class="btn btn-primary" id= "17_0" disabled=True>170</a>
+		<a href="#" class="btn btn-primary" id= "17_1" disabled=True>171</a>
+		<a href="#" class="btn btn-primary" id= "17_2" disabled=True>172</a>
+		<a href="#" class="btn btn-primary" id= "17_3" disabled=True>173</a>
+		<a href="#" class="btn btn-primary" id= "17_4" disabled=True>174</a>
+		<a href="#" class="btn btn-primary" id= "17_5" disabled=True>175</a>
+		<a href="#" class="btn btn-primary" id= "17_6" disabled=True>176</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "18_0" onClick="reply_click(this.id)">180</a>
-		<a href="#" class="btn btn-primary" id= "18_1" onClick="reply_click(this.id)">181</a>
-		<a href="#" class="btn btn-primary" id= "18_2" onClick="reply_click(this.id)">182</a>
-		<a href="#" class="btn btn-primary" id= "18_3" onClick="reply_click(this.id)">183</a>
-		<a href="#" class="btn btn-primary" id= "18_4" onClick="reply_click(this.id)">184</a>
-		<a href="#" class="btn btn-primary" id= "18_5" onClick="reply_click(this.id)">185</a>
-		<a href="#" class="btn btn-primary" id= "18_6" onClick="reply_click(this.id)">186</a>
+		<a href="#" class="btn btn-primary" id= "18_0" disabled=True>180</a>
+		<a href="#" class="btn btn-primary" id= "18_1" disabled=True>181</a>
+		<a href="#" class="btn btn-primary" id= "18_2" disabled=True>182</a>
+		<a href="#" class="btn btn-primary" id= "18_3" disabled=True>183</a>
+		<a href="#" class="btn btn-primary" id= "18_4" disabled=True>184</a>
+		<a href="#" class="btn btn-primary" id= "18_5" disabled=True>185</a>
+		<a href="#" class="btn btn-primary" id= "18_6" disabled=True>186</a>
 	</div>
 	<div class="btn-group btn-group-justified">
-		<a href="#" class="btn btn-primary" id= "19_0" onClick="reply_click(this.id)">190</a>
-		<a href="#" class="btn btn-primary" id= "19_1" onClick="reply_click(this.id)">191</a>
-		<a href="#" class="btn btn-primary" id= "19_2" onClick="reply_click(this.id)">192</a>
-		<a href="#" class="btn btn-primary" id= "19_3" onClick="reply_click(this.id)">193</a>
-		<a href="#" class="btn btn-primary" id= "19_4" onClick="reply_click(this.id)">194</a>
-		<a href="#" class="btn btn-primary" id= "19_5" onClick="reply_click(this.id)">195</a>
-		<a href="#" class="btn btn-primary" id= "19_6" onClick="reply_click(this.id)">196</a>
+		<a href="#" class="btn btn-primary" id= "19_0" disabled=True>190</a>
+		<a href="#" class="btn btn-primary" id= "19_1" disabled=True>191</a>
+		<a href="#" class="btn btn-primary" id= "19_2" disabled=True>192</a>
+		<a href="#" class="btn btn-primary" id= "19_3" disabled=True>193</a>
+		<a href="#" class="btn btn-primary" id= "19_4" disabled=True>194</a>
+		<a href="#" class="btn btn-primary" id= "19_5" disabled=True>195</a>
+		<a href="#" class="btn btn-primary" id= "19_6" disabled=True>196</a>
 	</div>
 </div>
 </body>

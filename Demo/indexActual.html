@@ -14,10 +14,13 @@
 	<br>
 	<H1 align="center">True Data</H1> 
 	<br><br>
-	<script src='https://cdn.mlkcca.com/v0.6.0/milkcocoa.js'></script>
+	<script src='https://cdn.mlkcca.com/v3/milkcocoa.1.0.0.min.js'></script>
 	<script>
 		var obj = document.getElementById("0_0");
-		var milkcocoa = new MilkCocoa('dogjb65ykxo.mlkcca.com'); 
+		var milkcocoa = new Milkcocoa({
+		    appId: 'BJBop-Szz',
+		    apiKey: 'QvXkGBVhDx8Mzj7G-BTH5Sv9Lo0iPv6ED1zYzKHU' //accessToken:  'sh/+h9jiB0zJBGp1aJzdDGgF6Tbg0AvO3JERBrRpTLs='
+		}); 
 		var clickData = milkcocoa.dataStore('ClickData');
 		clickData.on('push', click_message)	;	
 		function click_message(clicked_id) {
