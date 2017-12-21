@@ -6,7 +6,7 @@ except ImportError:
     import _thread as thread
 import time
 import threading
-import TrueValue
+import TrueValue, GenerateTrainingData, RNNPredicition
 
 class SendPrediction(threading.Thread):
 	def run(self):
@@ -17,20 +17,35 @@ class SendPrediction(threading.Thread):
 	def set(self, Prediction):
 		self.Prediction = Prediction
 
+class PredictAndSend(threading.Thread):
+  def run(self):
+    Prediction = RNNPredicition.Prediction(self.TrainingData)
+    t3 = SendPrediction()
+    t3.set(Prediction)
+    t3.start()
+    return    
+  def set(self, TrainingData):
+    self.TrainingData = TrainingData
 
+
+K = False
 TrainingData = []
 def on_message(ws, message):
-	global TrainingData
-	msg = eval(message)
-	if 'clickedId' in message:
-		TrainingData = TrainingData + msg
-		# TODO: Create a new thread for this
-		t3 = SendPrediction()
-		t3.set(TrueValue.Prediction(TrainingData))
-		t3.start()
-		TrainingData = []
-	else:
-		TrainingData = TrainingData + msg
+  global TrainingData, K
+  msg = eval(message)
+  # print msg
+  if 'clickedId' in message:
+    TrainingData = TrainingData + msg
+    K = True
+  else:
+    #print message
+    TrainingData = TrainingData + msg
+    if K:
+      PnS = PredictAndSend()
+      PnS.set(TrainingData)
+      PnS.start()
+      TrainingData = msg
+      K = False
 
 def on_error(ws, error):
     print(error)
@@ -71,5 +86,5 @@ if __name__ == "__main__":
     t1 = AccData()
     t1.start() 
 
-    t2 = ClickData()
-    t2.start()
+    # t2 = ClickData()
+    # t2.start()

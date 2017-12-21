@@ -7,8 +7,8 @@ window.onload = function(){
   var ds = milkcocoa.dataStore('AccData');
   //ds.on('send', function (mes) { console.log(mes) })
   //ds.push('satya');
-  window.addEventListener('devicemotion', function(e){
+  window.addEventListener('devicemotion', _.throttle(function(e){
     g = e.acceleration;
     ds.send({x: g.x, y: g.y, z: g.z});
-  },true);
+  },50), true);
 };

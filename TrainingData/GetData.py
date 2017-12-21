@@ -45,5 +45,5 @@ if __name__ == "__main__":
     t1 = T1()
     t1.start() 
 
-    t2 = T2()
-    t2.start()
+    # t2 = T2()
+    # t2.start()

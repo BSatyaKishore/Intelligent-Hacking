@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
 </head>
 
 
@@ -15,12 +16,16 @@
 	<script>
 		var milkcocoa = new Milkcocoa({
 		  appId: 'BJBop-Szz',
-		  accessToken:  'scofHXNjjiDHiDjTkqxjq56RVeeWWEAvAGJCLOkeDe8='
+		  apiKey: 'QvXkGBVhDx8Mzj7G-BTH5Sv9Lo0iPv6ED1zYzKHU'
 		});
+
+		var ds = milkcocoa.dataStore('AccData');
 		//console.log(milkcocoa);
 		var clickData = milkcocoa.dataStore('ClickData');		
 		function reply_click(clicked_id) {
 			console.log(clicked_id);
+			ds.send({clickedId: clicked_id});
+			console.log('ds sent')
 			clickData.push({clickedId: clicked_id});
 			console.log('done');
 		}; 
