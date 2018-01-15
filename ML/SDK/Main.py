@@ -19,14 +19,14 @@ class SendPrediction(threading.Thread):
 
 class PredictAndSend(threading.Thread):
   def run(self):
+    Prediction = GenerateTrainingData.Prediction(self.TrainingData)
     Prediction = RNNPredicition.Prediction(self.TrainingData)
     t3 = SendPrediction()
     t3.set(Prediction)
     t3.start()
-    return    
+    return
   def set(self, TrainingData):
     self.TrainingData = TrainingData
-
 
 K = False
 TrainingData = []
@@ -85,6 +85,3 @@ if __name__ == "__main__":
 
     t1 = AccData()
     t1.start() 
-
-    # t2 = ClickData()
-    # t2.start()

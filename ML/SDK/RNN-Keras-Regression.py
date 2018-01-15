@@ -20,19 +20,9 @@ if True:
 		data.sort(key=lambda tup: tup[0])
 		for i in data:
 			a = fun(i[1][1:-1].split(','))
+			_Temp.append(a)
 			if 'clickedId' in str(i):
-				_Temp.append(a)
-				sk = 1
-			elif sk != 0:
-				sk = sk -1
-				print 'SK ',len(_Temp),sk
-				_Temp = _Temp[:-1]+[a]+[_Temp[-1]]
-				if sk == 0:
 					break
-			else:
-				_Temp.append(a)
-				print 'Append ', len(_Temp)
-		#print _Temp
 		TrainingData.append(_Temp)
 		print 'LK', lk
 
