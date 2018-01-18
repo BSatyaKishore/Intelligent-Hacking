@@ -1,5 +1,5 @@
 # Intelligent Hacking
-!dea inspired from [Stealing PINs via Mobile Sensors](https://arxiv.org/pdf/1605.05549.pdf). This project is created to demonstrate the power of ML with IoT. Uhuru's [Milkcocoa](https://mlkcca.com/) is used to developed this app.
+Idea inspired from [Stealing PINs via Mobile Sensors](https://arxiv.org/pdf/1605.05549.pdf). This project is created to demonstrate the power of ML with IoT. Uhuru's [Milkcocoa](https://mlkcca.com/) is used to developed this app.
 Runs using SimpleRNN on the server or edge side. Collects accelerometer's data on mobile using js through Milkcocoa's js api.
 
 ## Running the code:
